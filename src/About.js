@@ -12,13 +12,13 @@ const team = [
   },
   {
     img: "/kt4.png",
-    name: "Engr. Abu Jayed",
+    name: "Engr. Abu Jahed",
     role: "Lead Engineer 🏗️",
     desc: "Combining innovative design and engineering precision to create iconic, lasting structures.",
   },
   {
     img: "/kt2.png",
-    name: "Engr. Abu Bakkar",
+    name: "Engr. Abu Bakar Siddique",
     role: "Project Manager 📊",
     desc: "Mastermind behind seamless project execution, ensuring timely delivery and premium quality.",
   },
