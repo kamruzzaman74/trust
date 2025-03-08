@@ -55,7 +55,7 @@ const Footer = () => {
           animate={{ opacity: 1 }}
           transition={{ duration: 1.5 }}
         >
-          &copy; 2025 Trust Builders & Engineering Consultation. All Rights Reserved.
+          &copy; 2025 growMore19. All Rights Reserved.
         </motion.p>
       </div>
     </footer>

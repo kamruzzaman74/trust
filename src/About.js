@@ -32,6 +32,7 @@ const team = [
 
 const About = () => {
   return (
+    <>
     <section className="bg-gradient-to-br from-blue-50 to-white py-28 px-6 md:px-20 text-gray-800">
       <Navbar />
 
@@ -109,8 +110,10 @@ const About = () => {
         </a>
       </motion.div>
 
-      <Footer />
+      
     </section>
+     <Footer />
+     </>
   );
 };
 
