@@ -3,83 +3,77 @@ import { motion } from "framer-motion";
 
 const InteriorDesignServices = () => {
   return (
-    <section
-      className="relative py-24 px-8 bg-fixed bg-center bg-cover"
-      style={{
-        backgroundImage:
-          "url('https://images.unsplash.com/photo-1615873968403-89f4804040d3?auto=format&fit=crop&w=1400&q=80')",
-      }}
-    >
-      {/* Dark Overlay */}
-      <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/50 to-black/80"></div>
-
-      <div className="relative max-w-7xl mx-auto text-center text-white space-y-16">
+    <section className="relative py-20 px-5 bg-white">
+      <div className="max-w-7xl mx-auto text-center space-y-16">
         {/* Heading */}
         <motion.h2
-          className="text-6xl font-extrabold tracking-wide leading-tight bg-gradient-to-r from-pink-500 via-yellow-300 to-purple-500 bg-clip-text text-transparent animate-pulse"
+          className="text-4xl md:text-6xl font-extrabold leading-tight bg-gradient-to-r from-rose-500 via-amber-400 to-indigo-600 bg-clip-text text-transparent"
           initial={{ opacity: 0, y: -50 }}
-          animate={{ opacity: 1, y: 0 }}
+          whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 1 }}
         >
-          🪄 Elevate Your Space with Style
+          ✨ Design Beyond Imagination
         </motion.h2>
+        <motion.p
+          className="text-lg md:text-2xl text-gray-600 max-w-3xl mx-auto"
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          transition={{ duration: 1, delay: 0.2 }}
+        >
+          We create breathtaking spaces tailored to your lifestyle, blending
+          creativity and comfort.
+        </motion.p>
 
-        {/* Service Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
-          {/* Card 1 */}
-          <motion.div
-            className="group bg-white/10 backdrop-blur-2xl p-10 rounded-3xl border border-white/30 shadow-[0_8px_30px_rgb(0,0,0,0.3)] hover:shadow-[0_8px_50px_rgb(255,255,255,0.4)] transition-all duration-500 hover:scale-105 cursor-pointer"
-            initial={{ opacity: 0, x: -100 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 1 }}
-          >
-            <h3 className="text-4xl font-bold mb-4 group-hover:text-pink-400 transition">
-              🏡 Luxury Home Designs
-            </h3>
-            <p className="text-lg opacity-80">
-              Curate the perfect blend of comfort and elegance at home.
-            </p>
-          </motion.div>
-
-          {/* Card 2 */}
-          <motion.div
-            className="group bg-white/10 backdrop-blur-2xl p-10 rounded-3xl border border-white/30 shadow-[0_8px_30px_rgb(0,0,0,0.3)] hover:shadow-[0_8px_50px_rgb(255,255,255,0.4)] transition-all duration-500 hover:scale-105 cursor-pointer"
-            initial={{ opacity: 0, y: 100 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1, delay: 0.3 }}
-          >
-            <h3 className="text-4xl font-bold mb-4 group-hover:text-yellow-300 transition">
-              🏢 Chic Commercial Spaces
-            </h3>
-            <p className="text-lg opacity-80">
-              Impress clients with futuristic and functional designs.
-            </p>
-          </motion.div>
-
-          {/* Card 3 */}
-          <motion.div
-            className="group bg-white/10 backdrop-blur-2xl p-10 rounded-3xl border border-white/30 shadow-[0_8px_30px_rgb(0,0,0,0.3)] hover:shadow-[0_8px_50px_rgb(255,255,255,0.4)] transition-all duration-500 hover:scale-105 cursor-pointer"
-            initial={{ opacity: 0, x: 100 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 1, delay: 0.6 }}
-          >
-            <h3 className="text-4xl font-bold mb-4 group-hover:text-purple-400 transition">
-              🧑‍💻 Modern Office Vibes
-            </h3>
-            <p className="text-lg opacity-80">
-              Boost productivity with spaces designed to inspire.
-            </p>
-          </motion.div>
+        {/* Services */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          {[
+            {
+              icon: "🏡",
+              title: "Elegant Home Interiors",
+              desc: "Transform your living space into a cozy, stylish retreat.",
+              color: "hover:text-rose-500",
+            },
+            {
+              icon: "🏢",
+              title: "Premium Office Designs",
+              desc: "Boost productivity with modern, innovative workspaces.",
+              color: "hover:text-amber-400",
+            },
+            {
+              icon: "🛋️",
+              title: "Luxury Lounge Areas",
+              desc: "Relax in spaces designed for both beauty and comfort.",
+              color: "hover:text-indigo-500",
+            },
+          ].map((item, index) => (
+            <motion.div
+              key={index}
+              className="group p-8 bg-gray-50 rounded-3xl shadow-xl hover:shadow-2xl border border-gray-200 transition-all hover:scale-105"
+              initial={{ opacity: 0, y: 30 * (index + 1) }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 1, delay: index * 0.3 }}
+            >
+              <div className="text-5xl mb-4">{item.icon}</div>
+              <h3
+                className={`text-2xl font-semibold mb-3 transition ${item.color}`}
+              >
+                {item.title}
+              </h3>
+              <p className="text-gray-600">{item.desc}</p>
+            </motion.div>
+          ))}
         </div>
 
-        {/* Optional CTA */}
-        <motion.a
-          href="#contact"
-          className="inline-block mt-12 px-12 py-4 text-xl font-bold rounded-full bg-gradient-to-r from-pink-500 to-purple-500 text-white shadow-lg hover:shadow-2xl transform hover:scale-105 transition-all duration-500"
-          whileHover={{ scale: 1.1 }}
+        {/* Floating Animation Text */}
+        <motion.div
+          animate={{ y: [0, -10, 0] }}
+          transition={{ repeat: Infinity, duration: 3 }}
+          className="mt-12"
         >
-          🚀 Let's Design Your Dream
-        </motion.a>
+          <p className="text-lg md:text-xl font-medium text-gray-700">
+            🎨 Let's bring your dream interiors to life!
+          </p>
+        </motion.div>
       </div>
     </section>
   );
